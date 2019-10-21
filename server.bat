@@ -1,0 +1,1 @@
+start "" python server.py --port %1 --video %2
