@@ -12,7 +12,7 @@ with open("cred.json", 'r') as cred:
     keys = data.get('keys')
 
 for x in os.listdir("video1"):
-    os.system("python server.py --port {}  --video \"video1/{}\"".format(initial_port,x))
+    os.system("server {} \"video1/{}\"".format(initial_port,x))
     initial_port += 1
 
 s = socket.socket()         
@@ -40,5 +40,5 @@ while True:
     f.close()
     print( "Done Receiving")
     c.close()
-    os.system("python server.py --port {} --video \"video1/{}\"".format(initial_port,len(os.listdir("video1"))-1))
+    os.system("server {} \"video1/{}\"".format(initial_port,len(os.listdir("video1"))-1))
     initial_port += 1
